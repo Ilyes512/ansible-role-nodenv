@@ -1,0 +1,22 @@
+---
+- stat:
+    path: "/home/{{ nodenv_user }}/.nodenv"
+  register: nodenv_folder
+
+- name: Install nodenv
+  become: yes
+  become_user: "{{ nodenv_user }}"
+  git:
+    repo: https://github.com/nodenv/nodenv.git
+    dest: "~/.nodenv"
+    version: master
+  when: not (nodenv_folder.stat.exists and nodenv_folder.stat.isdir)
+
+- name: Source nodenv in ~/.profile
+  become: yes
+  become_user: "{{ nodenv_user }}"
+  lineinfile:
+    dest: ~/.profile
+    line: "export PATH=\"$HOME/.nodenv/bin:$PATH\""
+    create: yes
+    state: present

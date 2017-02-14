@@ -1,0 +1,5 @@
+---
+ansidev_package_state: present
+
+nodenv_package_state: "{{ ansidev_package_state }}"
+nodenv_user: vagrant
