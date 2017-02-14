@@ -36,10 +36,10 @@ Example Playbook
 Todo's
 ------
 
-[] Add node-build.
-[] Optionally install global node version (and npm)
-[] Optionally install yarn
-[] Optionally compile dynamic bash extension to speed up nodenv `$ cd ~/.nodenv && src/configure && make -C
+- [ ] Add node-build.
+- [ ] Optionally install global node version (and npm)
+- [ ] Optionally install yarn
+- [ ] Optionally compile dynamic bash extension to speed up nodenv `$ cd ~/.nodenv && src/configure && make -C
 src`
 
 License
